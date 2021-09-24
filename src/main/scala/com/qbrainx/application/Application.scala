@@ -1,7 +1,7 @@
 package com.qbrainx.application
 
 import akka.actor.ActorSystem
-import com.qbrainx.model.Supervisor
+import com.qbrainx.actors.Supervisor
 
 object Application extends App{
   val system = ActorSystem("DataProcessingAkka")

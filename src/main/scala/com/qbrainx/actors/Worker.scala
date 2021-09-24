@@ -1,7 +1,7 @@
-package com.qbrainx.model
+package com.qbrainx.actors
 
 import akka.actor.{Actor, ActorRef}
-import com.qbrainx.model.Worker.{Execute, Result}
+import com.qbrainx.actors.Worker.{Execute, Result}
 import com.qbrainx.service._
 
 class Worker extends Actor with WorkHandler {

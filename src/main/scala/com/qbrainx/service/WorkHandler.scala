@@ -1,6 +1,6 @@
 package com.qbrainx.service
 
-import com.qbrainx.model.Worker.{Date, Log}
+import com.qbrainx.actors.Worker.{Date, Log}
 
 trait WorkHandler {
   def convertToLog(line: String): Log = line.split(",").toList match {

@@ -1,7 +1,7 @@
-package com.qbrainx.model
+package com.qbrainx.actors
 import akka.actor._
 import Intializer._
-import com.qbrainx.model.MasterActor.Aggregate
+import com.qbrainx.actors.MasterActor.Aggregate
 import com.qbrainx.service.Intiator
 
 import scala.io.Source

@@ -1,9 +1,9 @@
-package com.qbrainx.model
+package com.qbrainx.actors
 
 import akka.actor._
-import com.qbrainx.model.Intializer._
-import com.qbrainx.model.MasterActor._
-import com.qbrainx.model.Worker._
+import com.qbrainx.actors.Intializer._
+import com.qbrainx.actors.MasterActor._
+import com.qbrainx.actors.Worker._
 
 class MasterActor(parent: ActorRef) extends Actor with ActorLogging {
 

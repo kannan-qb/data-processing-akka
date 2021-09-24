@@ -1,4 +1,4 @@
-package com.qbrainx.model
+package com.qbrainx.actors
 import Supervisor._
 import akka.actor._
 
