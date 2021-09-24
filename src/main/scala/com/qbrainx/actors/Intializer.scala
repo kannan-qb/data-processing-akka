@@ -11,14 +11,14 @@ class Intializer extends Actor with ActorLogging with Intiator {
   var masterNode: ActorRef = context.actorOf(MasterActor.props(context.self), "masterNode")
   override def receive: Receive = {
     case StartIngestion(noofWorker) =>
-      log.info("[Ingestion] Initializing Worker ...")
+      log.info("[Intializer] Initializing Worker ...")
       masterNode ! MasterActor.InitializeWorker(noofWorker)
     case MasterActor.WorkerInitialized =>
-      log.info("[Ingestion] worker is initialized. Getting lines from source and send to masterNode ...")
+      log.info("[Intializer] worker is initialized. Getting lines from source and send to masterNode ...")
       Source.fromInputStream(inputStream).getLines().toList.filter(isValidIp).foreach(masterNode ! Data(_))
       inputStream.close()
     case Aggregate(result) =>
-      log.info(s"[Ingestion] total status Code: ${result.keys.map(k => s"$k -> ${result(k).length}").toString()}")
+      log.info(s"[Intializer] total status Code: ${result.keys.map(k => s"$k -> ${result(k).length}").toString()}")
       val lines = result.keys.map { key =>
         s"Status : $key has a total of ${result(key).length} amount}"
       }

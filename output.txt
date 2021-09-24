@@ -1,0 +1,1 @@
+Status : 206 has a total of 52 amount},Status : 404 has a total of 251 amount},Status : 304 has a total of 658 amount},Status : 200 has a total of 11330 amount},Status : 302 has a total of 3498 amount},

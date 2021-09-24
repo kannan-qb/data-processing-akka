@@ -13,14 +13,14 @@ trait Intiator {
     ipRegex.pattern.matcher(line.split(",")(0)).matches()
   }
 
-  def openInputStream:InputStream = getClass.getResourceAsStream("/weblog.csv")
+  def openInputStream:InputStream = getClass.getResourceAsStream("/log.csv")
 
   def writeToOutputFile(lines: Iterable[String]): Any = {
-    val path: String = getClass.getResource("/output.txt").getPath
-     val write = new PrintWriter(path)
+
+     val write: PrintWriter = new PrintWriter("output.txt")
      Try(write) match {
-       case Success(value) => val header = lines.foldRight("")((prev, current) => prev + "," + current)
-                               value.println(header)
+       case Success(value) => value.println(lines.foldRight("")((prev, current) => prev + "," + current))
+                               write.close()
        case Failure(exception) => exception.printStackTrace()
 
      }
